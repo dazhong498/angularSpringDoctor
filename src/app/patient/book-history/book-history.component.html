@@ -1,0 +1,52 @@
+<div class="patientPage">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toHome()">Home</button>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toProfile()">Profile</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toAppointment()">Appointment</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toHistory()">History</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class='container'>
+    <div class="card">
+      <div class="card-header">
+        Appointment History
+      </div>
+  
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table"
+                  *ngIf="appointmentList && appointmentList.length">
+            <thead>
+              <tr>
+                <td>Doctor</td>
+                <td>Date</td>
+                <td>Time</td>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let appointment of appointmentList'>
+                <td>{{ appointment.doctor.lastName }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.period }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

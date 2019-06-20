@@ -1,0 +1,174 @@
+<div class="doctorPage">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toHome()">Home</button>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toApplyLeave()">Apply Leave</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toBuildAppointment()">Build Appointment</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toViewAppointment()">View Appointments</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toEditProfile()">Edit Profile</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class='container'>
+  <div class="card">
+    <div class="card-header">
+      Build Appointment
+    </div>
+
+    <div class="card-body">
+
+      <form class="form-horizontal"
+        novalidate
+        (ngSubmit)="buildAppointment()"
+        [formGroup]="reactAppointmentForm">
+        <fieldset>
+          <div class="form-group">
+            <label class="col-md-2 control-label"
+                  for="dateId">Date</label>
+  
+            <div class="col-md-8">
+              <input class="form-control"
+                    id="dateId"
+                    type="date"
+                    required
+                    formControlName="date" />
+            </div>
+          </div>
+
+          <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="defaultInline1" name="period" mdbInput formControlName="period" value = "9:00 - 10:00">
+              <label class="custom-control-label" for="defaultInline1">9:00 - 10:00</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="defaultInline2" name="period" mdbInput formControlName="period" value = "10:00 - 11:00">
+              <label class="custom-control-label" for="defaultInline2">10:00 - 11:00</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="defaultInline3" name="period" mdbInput formControlName="period" value = "11:00 - 12:00">
+              <label class="custom-control-label" for="defaultInline3">11:00 - 12:00</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="defaultInline4" name="period" mdbInput formControlName="period" value = "13:00 - 14:00">
+              <label class="custom-control-label" for="defaultInline4">13:00 - 14:00</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="defaultInline5" name="period" mdbInput formControlName="period" value = "14:00 - 15:00">
+              <label class="custom-control-label" for="defaultInline5">14:00 - 15:00</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="defaultInline6" name="period" mdbInput formControlName="period" value = "15:00 - 16:00">
+              <label class="custom-control-label" for="defaultInline6">15:00 - 16:00</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="defaultInline7" name="period" mdbInput formControlName="period" value = "16:00 - 17:00">
+              <label class="custom-control-label" for="defaultInline7">16:00 - 17:00</label>
+            </div>
+  
+          
+
+          <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+              <span>
+                  <button class="btn btn-primary"
+                          type="submit">
+                      Build
+                  </button>
+              </span>
+              <span>
+                  <button class="btn btn-default"
+                          type="button"
+                          (click)="toHome()">
+                    Cancel
+                  </button>
+              </span>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <!-- <form class="form-horizontal"
+            novalidate
+            (ngSubmit)="buildAppointment()"
+            [formGroup]="reactiveForm">
+        <fieldset>
+          <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="dateId">Date</label>
+  
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="dateId"
+                     type="date"
+                     formControlName="date"/>
+             
+            </div>
+          </div>
+
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInline1" name="time" mdbInput formControlName="time" value = "9:00 - 10:00">
+            <label class="custom-control-label" for="defaultInline1">9:00 - 10:00</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInline2" name="time" mdbInput formControlName="time" value = "10:00 - 11:00">
+            <label class="custom-control-label" for="defaultInline2">10:00 - 11:00</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInline3" name="time" mdbInput formControlName="time" value = "11:00 - 12:00">
+            <label class="custom-control-label" for="defaultInline3">11:00 - 12:00</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInline4" name="time" mdbInput formControlName="time" value = "13:00 - 14:00">
+            <label class="custom-control-label" for="defaultInline4">13:00 - 14:00</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInline5" name="time" mdbInput formControlName="time" value = "14:00 - 15:00">
+            <label class="custom-control-label" for="defaultInline5">14:00 - 15:00</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInline6" name="time" mdbInput formControlName="time" value = "15:00 - 16:00">
+            <label class="custom-control-label" for="defaultInline6">15:00 - 16:00</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInline7" name="time" mdbInput formControlName="time" value = "16:00 - 17:00">
+            <label class="custom-control-label" for="defaultInline7">16:00 - 17:00</label>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+              <span>
+                <button class="btn btn-primary"
+                        type="submit">
+                    Save
+                </button>
+              </span>
+              <span>
+                <button class="btn btn-default"
+                        type="button"
+                        (click)="toHome()">
+                  Cancel
+                </button>
+              </span>
+            </div>
+          </div>
+        </fieldset>
+      </form> -->
+    </div>
+
+   
+  </div>
+</div>
+</div>

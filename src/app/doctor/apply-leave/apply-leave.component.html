@@ -1,0 +1,93 @@
+<div class="doctorPage">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toHome()">Home</button>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toApplyLeave()">Apply Leave</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toBuildAppointment()">Build Appointment</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toViewAppointment()">View Appointments</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toEditProfile()">Edit Profile</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class='container'>
+    <div class="card">
+      <div class="card-header">
+        Leave 
+      </div>
+  
+      <div class="card-body">
+
+        <form class="form-horizontal"
+          novalidate
+          (ngSubmit)="applyLeave()"
+          [formGroup]="reactLeaveForm">
+          <fieldset>
+            <div class="form-group">
+              <label class="col-md-2 control-label"
+                    for="dateId">Date</label>
+    
+              <div class="col-md-8">
+                <input class="form-control"
+                      id="dateId"
+                      type="date"
+                      required
+                      formControlName="date" />
+              </div>
+            </div>
+  
+  
+            <div class="form-group">
+              <label class="col-md-2 control-label"
+                    for="reasonId">Reason</label>
+  
+              <div class="col-md-8">
+                <input class="form-control"
+                      id="reasonId"
+                      type="text"
+                      placeholder="Reason"
+                      required
+                      formControlName="reason" />
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            type="submit">
+                        Edit
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            type="button"
+                            (click)="toHome()">
+                      Cancel
+                    </button>
+                </span>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        
+      </div>
+  
+      <div class="alert alert-danger"
+           *ngIf="errorMessage">{{errorMessage}}
+      </div>
+    </div>
+  </div>
+  </div>

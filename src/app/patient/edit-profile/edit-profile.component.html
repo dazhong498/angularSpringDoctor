@@ -1,0 +1,86 @@
+<div class="patientPage">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toHome()">Home</button>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toProfile()">Profile</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toAppointment()">Appointment</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toHistory()">History</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class='container'>
+    <div class="card">
+      <div class="card-header">
+        Edit Profile
+      </div>
+  
+      <div class="card-body">
+          <form class="form-horizontal"
+          novalidate
+          (ngSubmit)="editProfile()"
+          [formGroup]="reactProfileForm">
+          <fieldset>
+            <!-- <div class="form-group">
+              <label class="col-md-2 control-label"
+                    for="addressId">Address</label>
+    
+              <div class="col-md-8">
+                <input class="form-control"
+                      id="addressId"
+                      type="text"
+                      placeholder="Address"
+                      formControlName="address" />
+               
+              </div>
+            </div> -->
+  
+  
+            <div class="form-group">
+              <label class="col-md-2 control-label"
+                    for="emailId">Email</label>
+  
+              <div class="col-md-8">
+                <input class="form-control"
+                      id="emailId"
+                      type="text"
+                      placeholder="Email"
+                      formControlName="email" />
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            type="submit">
+                        Edit
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            type="button"
+                            (click)="toHome()">
+                      Cancel
+                    </button>
+                </span>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>

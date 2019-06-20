@@ -1,0 +1,53 @@
+<div class = "homePage">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <button class="btn btn-primary my-2 my-sm-0" (click) = "toHome()">Home</button>
+        </li>
+        
+        <div class="nav-item active" *ngIf="isAdmin; then admin">
+        </div>
+  
+        
+        <div class="nav-item active" *ngIf="isDoctor; then doctor">
+        </div>
+  
+        
+        <div class="nav-item active" *ngIf="isPatient; then patient">
+        </div>
+      </ul>
+  
+      <div class="my-2 my-lg-0" *ngIf="isLogin; else login">
+        <button class="btn btn-primary my-2 my-sm-0" (click) = "toLogout()">Logout</button>
+      </div>
+  
+      <ng-template #login>
+        <div class="my-2 my-lg-0">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toLogin()">Login</button>
+          <!-- <button class="btn btn-primary my-2 my-sm-0" (click) = "toSignUp()">Sign Up</button> -->
+        </div>
+      </ng-template>
+  
+      <ng-template #admin>
+        <li class="nav-item active">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toAdmin()">Admin</button>
+        </li>
+      </ng-template>
+  
+      <ng-template #doctor>
+        <li class="nav-item active">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toDoctor()">Doctor</button>
+        </li>
+      </ng-template>
+  
+      <ng-template #patient>
+        <li class="nav-item active">
+          <button class="btn btn-primary my-2 my-sm-0" (click) = "toPatient()">Patient</button>
+        </li>
+      </ng-template>
+      
+    </div>
+  </nav>
+</div>
